@@ -1,7 +1,15 @@
+const Course = require('../modal/Couser')
 class SiteController {
     // [get] / neww
-    index(req,res){
-        res.render('home')
+    async index(req, res) {
+        try {
+            const data = await Course.find({});
+            res.json(data);
+        }  catch (err) {
+            res.status(400).json({error: err});
+
+        }
+
     }
     search(req,res){
         res.render('search')

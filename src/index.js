@@ -6,7 +6,8 @@ const { engine } = require('express-handlebars');
 const app = express();
 const port = 3000;
 const route = require('./routes')
-
+const db = require('./config/db')
+db.conect()
 // Http logger middleware
 // app.use(morgan('combined'));
 
