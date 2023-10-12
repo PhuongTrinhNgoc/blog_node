@@ -1,21 +1,18 @@
 const Course = require('../modal/Couser')
 const { mongoosToObj } = require('../../util/mongoose')
-class SiteController {
+class MeController {
     // [get] / neww
-    async index(req, res) {
+    async storedController(req, res) {
         try {
             const data = await Course.find({})
-            res.render('home',{data: mongoosToObj(data)})
+            res.render('meListCourses',{data: mongoosToObj(data)})
         }  catch (err) {
             res.status(400).json({error: err});
 
         }
 
     }
-    search(req,res){
-        res.render('search')
-    }
  
  
 }
-module.exports = new SiteController
+module.exports = new MeController

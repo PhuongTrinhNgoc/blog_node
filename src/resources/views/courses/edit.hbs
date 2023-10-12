@@ -1,0 +1,21 @@
+<form method="POST" action="/courses/{{ couClone._id }}?_method=PUT" class="row g-3 mt4">
+  <div class="col-md-12">
+    <label for="name" class="form-label">name</label>
+    <input  type="text" class="form-control" name="name" id="name" value="{{ couClone.name }}">
+  </div>
+  <div class="col-md-12">
+    <label for="description" >description</label>
+   <textarea type="text" id="description" class="form-control" cols="100 " >{{ couClone.description }}</textarea>
+  </div>
+  <div class="col-md-12">
+    <label for="imgId" class="form-label">img</label>
+    <input value="{{ couClone.imgId }}" type="text" class="form-control" name="imgId" id="imgId">
+  </div>
+    <div class="col-md-12">
+    <label for="level" class="form-label">level</label>
+    <input value="{{ couClone.level }}" type="text" class="form-control" name="level" id="level">
+  </div>
+  <div class="col-12">
+    <button  type="submit" class="btn btn-primary">Lưu</button>
+  </div>
+</form>

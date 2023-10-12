@@ -1,0 +1,37 @@
+<div class="">
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">stt</th>
+      <th scope="col">tên khóa học</th>
+      <th scope="col">mô tả</th>
+      <th scope="col">Cấp độ</th>
+      <th scope="col">img</th>
+      <th scope="col">ngày tạo</th>
+      <th scope="col">Hành động</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each data}}
+    <tr>
+      <th scope="row">{{ sum @index 1 }}</th>
+    <td> {{ this.name }} </td>
+    <td> {{ this.description }} </td>
+    <td> {{ this.level }} </td>
+    <td>  <img class="img-me" src={{ this.img }}  alt=""> </td>
+    <td> {{ this.createdAt }} </td>
+    <td> 
+        <a href="/courses/{{ this._id }}/edit" >Sửa</a>
+        <a>Xóa</a>
+
+    </td>
+
+      
+    </tr>
+  {{/each}}
+    
+  </tbody>
+</table>
+
+</div>
